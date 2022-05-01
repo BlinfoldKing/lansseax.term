@@ -1,0 +1,2 @@
+execx($(starship init xonsh))
+pfetch

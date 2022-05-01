@@ -1,5 +1,13 @@
-{ pkgs, ... }:
+{ username, config, lib, pkgs, ... }:
 {
-    programs.kitty.extraConfig = builtins.readFile ./kitty.conf;
-}
+  home-manager.users.${username} = {
+    programs.kitty = {
+        enable = true;
+        extraConfig =  builtins.readFile ./kitty.conf;
+    };
+  };
 
+
+  programs.xonsh.enable = true;
+  programs.xonsh.config = builtins.readFile ./.xonshrc;
+}
